@@ -1,4 +1,5 @@
 const express = require("express");
+const cool = require("cool-ascii-faces");
 const { MongoClient } = require("mongodb");
 const ObjectId = require("mongodb").ObjectId;
 const cors = require("cors");
@@ -32,7 +33,7 @@ async function run() {
     // add places to the database
     app.post("/places", async (req, res) => {
       const result = await placeCollection.insertOne(req.body);
-      console.log(result);
+      res.json(result);
     });
 
     // get single api
