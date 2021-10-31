@@ -4,7 +4,7 @@ const ObjectId = require("mongodb").ObjectId;
 const cors = require("cors");
 require("dotenv").config();
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 // middlewire
 app.use(cors());
 app.use(express.json());
@@ -97,7 +97,7 @@ async function run() {
 run().catch(console.dir);
 
 app.get("/", (req, res) => {
-  res.send("Hello World! whats going on? not really good. but Alhamduillah. !");
+  res.send("Hello World! what's going on? !");
 });
 
 app.listen(port, () => {
