@@ -88,7 +88,6 @@ async function run() {
       const id = req.params._id;
       const query = { _id: ObjectId(id) };
       const result = await allBookingCollection.deleteOne(query);
-      // console.log(res.body);
       res.send(result);
     });
   } finally {
